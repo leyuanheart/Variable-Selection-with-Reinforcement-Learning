@@ -31,7 +31,7 @@ We provide example codes in `regression.ipynb` and `classification.ipynb`.
 
 For **synthetic data analysis**, we consider cases in the table below.
 
-| True Function $f$                                            | Details                                                      |
+| True Function \$f\$ ​                                         | Details                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1. \$y = \sum_{j=1}^8 \beta_j x_j\$​                          | \$x_j \stackrel{i.i.d}{\sim} N(0, 1)$ for $j=1,\ldots,m\$​    |
 | 2. $y = \sum_{j=1}^8 \beta_j x_j$                            | $\{x_j\}_{j=1}^m \sim N(\mathbf{0}, \boldsymbol{\Sigma}), \boldsymbol{\Sigma}_{ij}=0.5^{|i-j|}$ |
