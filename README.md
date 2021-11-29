@@ -33,7 +33,7 @@ For **synthetic data analysis**, we consider cases in the table below.
 
 | True Function $f$                                            | Details                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1. $y = \sum_{j=1}^8 \beta_j x_j $                           | $x_j \stackrel{i.i.d}{\sim} N(0, 1)$ for $j=1,\ldots,m$      |
+| 1. \$y = \sum_{j=1}^8 \beta_j x_j\$​                          | \$x_j \stackrel{i.i.d}{\sim} N(0, 1)$ for $j=1,\ldots,m\$​    |
 | 2. $y = \sum_{j=1}^8 \beta_j x_j$                            | $\{x_j\}_{j=1}^m \sim N(\mathbf{0}, \boldsymbol{\Sigma}), \boldsymbol{\Sigma}_{ij}=0.5^{|i-j|}$ |
 | 3. $y = \beta_1x_1 + \beta_2 x_2x_3 + \beta_3x_4 + \beta_4x_5x_6x_7 + \beta_5x_8$ | $x_j \stackrel{i.i.d}{\sim} N(0, 1)$ for $j=1,\ldots,m$      |
 | 4. $y = \sum_{j=1}^4 \beta_j x_j^2 + \sum_{j=4}^8 \beta_j x_j$ | $x_j \stackrel{i.i.d}{\sim} N(0, 1)$ for $j=1,\ldots,m$      |
