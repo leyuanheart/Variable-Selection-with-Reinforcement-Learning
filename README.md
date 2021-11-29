@@ -33,7 +33,7 @@ For **synthetic data analysis**, we consider cases in the table below.
 
 ![simulation settings](simulation_settings.png)
 
-For **real data analysis**, we apply our method in two UCI benchmark data set summarized in the table below.
+For **real data analysis**, we apply our method in two UCI benchmark datasets summarized in the table below.
 
 | Dataset               | Samples | Features | Task           |
 | --------------------- | ------- | -------- | -------------- |
