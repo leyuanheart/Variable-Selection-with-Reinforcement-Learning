@@ -23,6 +23,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix  #, f1_score
 from sklearn.feature_selection import SelectFromModel
 from sklearn.feature_selection import SequentialFeatureSelector
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import StandardScaler
 
 from scipy.stats import multivariate_normal
 
@@ -139,6 +141,12 @@ def metrics(idx, x_train, x_test, y_train, y_test):
     return svc_sel.score(x_test_sel, y_test)
 
 
+def metrics_cv(idx, X, Y, cv=5):
+#     clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))
+    clf = SVC(gamma='auto')
+    return cross_val_score(clf, X[:, idx], Y, cv=cv)
+
+
 m = 2576
 n = 57
 
@@ -242,14 +250,23 @@ def run(seed):
     svc.fit(x_train, y_train)
     
     
+    # dat = np.zeros((2, 6))
+    # dat[0, 5] = 57; dat[1, 5] = svc.score(x_test, y_test)
+    # dat[0, 0] = len(acp1); dat[0, 1] = len(acp2); dat[0, 2] = len(acp3); dat[0, 3] = len(lr2); dat[0, 4] = len(rf)
+    # dat[1, 0] = metrics(acp1, x_train, x_test, y_train, y_test)
+    # dat[1, 1] = metrics(acp2, x_train, x_test, y_train, y_test)
+    # dat[1, 2] = metrics(acp3, x_train, x_test, y_train, y_test)
+    # dat[1, 3] = metrics(lr2, x_train, x_test, y_train, y_test)
+    # dat[1, 4] = metrics(rf, x_train, x_test, y_train, y_test) 
+
     dat = np.zeros((2, 6))
-    dat[0, 5] = 57; dat[1, 5] = svc.score(x_test, y_test)
+    dat[0, 5] = 57; dat[1, 5] = metrics_cv(range(n), X, Y).mean()
     dat[0, 0] = len(acp1); dat[0, 1] = len(acp2); dat[0, 2] = len(acp3); dat[0, 3] = len(lr2); dat[0, 4] = len(rf)
-    dat[1, 0] = metrics(acp1, x_train, x_test, y_train, y_test)
-    dat[1, 1] = metrics(acp2, x_train, x_test, y_train, y_test)
-    dat[1, 2] = metrics(acp3, x_train, x_test, y_train, y_test)
-    dat[1, 3] = metrics(lr2, x_train, x_test, y_train, y_test)
-    dat[1, 4] = metrics(rf, x_train, x_test, y_train, y_test)    
+    dat[1, 0] = metrics_cv(acp1, X, Y).mean()
+    dat[1, 1] = metrics_cv(acp2, X, Y).mean()
+    dat[1, 2] = metrics_cv(acp3, X, Y).mean()
+    dat[1, 3] = metrics_cv(lr2, X, Y).mean()
+    dat[1, 4] = metrics_cv(rf, X, Y).mean()  
     
     end = time.time()
     print(f'rd: {seed} take {datetime.timedelta(seconds = end - start)}')
