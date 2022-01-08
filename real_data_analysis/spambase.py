@@ -169,7 +169,7 @@ def run(seed):
     
     r_baseline = torch.tensor(0)
     
-    x_tt, x_val, y_tt, y_val = train_test_split(x_train, y_train, test_size=0.3, random_state=seed)
+    x_tt, x_val, y_tt, y_val = train_test_split(x_train, y_train, test_size=0.01, random_state=seed)  # 0.3 for metrics, 0.01 for metrics_cv
 
     
     for step in range(200):
