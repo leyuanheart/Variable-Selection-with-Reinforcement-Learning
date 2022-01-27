@@ -31,7 +31,7 @@ We provide example codes in `regression.ipynb` and `classification.ipynb`.
 
 For **synthetic data analysis**, we consider cases in the table below.
 
-![simulation settings](simulation_settings.png)
+![simulation settings](https://pic.imgdb.cn/item/61f2a3a32ab3f51d91f27762.png)
 
 For **real data analysis**, we apply our method in two UCI benchmark datasets summarized in the table below.
 
