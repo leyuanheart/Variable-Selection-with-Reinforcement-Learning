@@ -1,6 +1,6 @@
 # Variable-Selection-with-Reinforcement-Learning
 
-This repository is the official implementation of the paper `Variable-Selection-with-Reinforcement-Learning`.
+This repository is the official implementation of the paper `Reinforced Variable Selection`.
 
 ## Requirements
 
