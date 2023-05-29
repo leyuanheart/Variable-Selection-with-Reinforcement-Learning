@@ -1,6 +1,6 @@
 # Variable-Selection-with-Reinforcement-Learning
 
-This repository is the official implementation of the paper `Variable-Selection-with-Reinforcement-Learning` submitted to ICML 2022.
+This repository is the official implementation of the paper `Variable-Selection-with-Reinforcement-Learning`.
 
 ## Requirements
 
